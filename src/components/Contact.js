@@ -9,14 +9,15 @@ const status = true;
 function Contact() {
     return (
     <div className="Contact">
-        <img alt="" src={avatar} />
+        <img className="avatar" alt="" src={avatar} />
         <div>
-            <h4> {name} </h4>
+            <h4 className="name"> {name} </h4>
             <div className="status">
-            <option className="status-online"></option>
-            <p className="status">{status? "online": "offline"}</p>
+                <button className="status-online"></button>
+                <p className="status-text">{status? "online": "offline"}</p>
             </div>
-        </div>
+        </div>   
+            
     </div>
     );
 }
