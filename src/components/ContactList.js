@@ -33,7 +33,7 @@ const users = [
   const ContactList = () => (
     <div>
       {users.map(item => (
-       <div className="Contact">
+       <div key={item.name} className="Contact">
        <img className="avatar" src={item.avatar} alt={item.name} />
        <div>
          <h4 className="name">{item.name}</h4>
@@ -47,13 +47,6 @@ const users = [
     </div>
   );
 
-  const QuoteList = () => (
-    <div>
-      {quotes.map(item => (
-        <img key={item.quote} src={item.image} alt={item.character} />
-      ))}
-    </div>
-  );
 
   ContactList.proTypes = {
     name: PropTypes.string,
