@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./ContactList.css";
+import "./Contact.css";
+import Contact from "./Contact";
 
 const users = [
     {
@@ -32,22 +33,16 @@ const users = [
 
   const ContactList = () => (
     <div>
-      {users.map(item => (
-       <div key={item.name} className="Contact">
-       <img className="avatar" src={item.avatar} alt={item.name} />
-       <div>
-         <h4 className="name">{item.name}</h4>
-         <div className="status">
-           <span className={item.online ? "status-online" : "status-offline"} />
-           <p className="status-text">{item.online ? "online" : "offline"}</p>
-         </div>
-       </div>
-     </div>
-      ))}
+      {users.map(user => 
+        <Contact key={user.name} {...user} />
+      )}
     </div>
   );
 
+  
 
+
+   
   ContactList.proTypes = {
     name: PropTypes.string,
     avatar: PropTypes.string,
